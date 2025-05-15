@@ -1,0 +1,235 @@
+/* Root Variables */
+:root {
+    --primary-color: #FF4655;          /* Valorant Red */
+    --accent-color: #0F1923;           /* Valorant Dark Blue */
+    --gradient-start: #FF4655;         /* Valorant Red */
+    --gradient-end: #0F1923;           /* Valorant Dark Blue */
+    --light-bg: rgba(255, 70, 85, 0.1); /* Transparent Valorant Red */
+}
+
+/* Global Styles */
+body {
+    font-family: 'Tungsten', 'DIN', sans-serif;
+    color: var(--accent-color);
+    background-color: #0F1923;
+}
+
+/* Typography */
+h1, h2, h4, h5 {
+    font-family: 'Tungsten', 'DIN', sans-serif;
+    font-weight: 700;
+    color: #FF4655;
+}
+
+.lead {
+    font-family: 'DIN', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #ECE8E1;
+}
+
+/* Hero Sections */
+.hero-section,
+.workshop-hero,
+.about-hero {
+    background: linear-gradient(135deg, #0F1923, #1F2F3C);
+    color: #ECE8E1;
+    padding: 100px 0;
+    margin-top: -2rem;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.hero-section::before,
+.workshop-hero::before,
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/hex-pattern.svg') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-image {
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(255, 70, 85, 0.2);
+    transition: transform 0.3s ease;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.hero-image:hover {
+    transform: translateY(-10px);
+}
+
+/* Buttons */
+.btn-gradient {
+    background: linear-gradient(45deg, #FF4655, #0F1923);
+    color: #ECE8E1;
+    border: none;
+    padding: 12px 32px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2));
+    transition: 0.5s;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 70, 85, 0.3);
+    color: #ECE8E1;
+}
+
+.btn-gradient:hover::before {
+    left: 100%;
+}
+
+/* Cards */
+.feature-card,
+.workshop-card,
+.category-card,
+.value-card,
+.benefit-card,
+.team-card {
+    background: #1F2F3C;
+    border-radius: 4px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #FF4655;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 70, 85, 0.2);
+}
+
+/* Icon Wrappers */
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #FF4655, #0F1923);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.icon-wrapper i {
+    font-size: 2rem;
+    color: #ECE8E1;
+}
+
+/* Project Cards */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, #0F1923, transparent);
+    color: #ECE8E1;
+    padding: 2rem;
+    transform: translateY(100px);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    transform: translateY(0);
+}
+
+/* Workshop Elements */
+.workshop-date {
+    background: #FF4655;
+    color: #ECE8E1;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.workshop-info i {
+    color: #FF4655;
+}
+
+.price {
+    color: #FF4655;
+    font-weight: bold;
+}
+
+/* Team Cards */
+.team-card {
+    background: #1F2F3C;
+    border: 1px solid #FF4655;
+}
+
+.team-card img {
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section,
+    .workshop-hero,
+    .about-hero {
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Gaming-specific Animations */
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 5px #FF4655; }
+    50% { box-shadow: 0 0 20px #FF4655; }
+    100% { box-shadow: 0 0 5px #FF4655; }
+}
+
+.btn-gradient:hover {
+    animation: glowPulse 1.5s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0F1923;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF4655;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff5e6b;
+} 
